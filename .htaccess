@@ -1,0 +1,24 @@
+RewriteEngine On
+
+RewriteBase /
+
+
+RewriteRule ^download/(.+)/(.+).html$ view.php?id=$1&permalink=$2
+
+RewriteRule ^(.+).html$ $1.php
+
+RewriteRule ^watch$ vervideo.php
+
+RewriteRule ^nonton$ nonton.php
+
+LimitRequestBody 10000000
+
+Options -Indexes
+
+ErrorDocument 403 /
+ErrorDocument 404 /
+ErrorDocument 405 /
+ErrorDocument 408 /
+ErrorDocument 500 /
+ErrorDocument 504 /
+ErrorDocument 502 /
